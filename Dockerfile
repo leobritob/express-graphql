@@ -1,8 +1,8 @@
 FROM node:lts
 
-WORKDIR /
+WORKDIR /app
 
-COPY ./src /
+COPY . /app/
 
 RUN npm i
 

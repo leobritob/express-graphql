@@ -1,20 +1,31 @@
 version: '3.8'
 
 services:
-  web:
-    build: .
-    ports:
-      - 8000:8000
-
-  database:
+  graphql_app_mariadb:
+    container_name: graphql_app_mariadb
     image: mariadb:latest
     ports:
       - 3306:3306
     environment:
       - MARIADB_ROOT_PASSWORD=123
-      - MARIADB_DATABASE=graphql_example
+      - MARIADB_DATABASE=graphql_app
     volumes:
-      - database_volume:/var/lib/mysql/
+      - graphql_app_database_volume:/var/lib/mysql/
+    networks:
+      - graphql_app_network
+
+  graphql_app_nodejs:
+    container_name: graphql_app_nodejs
+    depends_on:
+      - graphql_app_mariadb
+    build: .
+    ports:
+      - 4000:4000
+    networks:
+      - graphql_app_network
 
 volumes:
-  database_volume:
+  graphql_app_database_volume:
+
+networks:
+  graphql_app_network:
