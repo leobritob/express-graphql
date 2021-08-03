@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - 8000:8000
+
+  database:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=123
+      - MARIADB_DATABASE=graphql_example
+    volumes:
+      - database_volume:/var/lib/mysql/
+
+volumes:
+  database_volume:
