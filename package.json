@@ -1,0 +1,36 @@
+{
+  "name": "express-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "nodemon --exec babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leobritob/express-graphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leobritob/express-graphql/issues"
+  },
+  "homepage": "https://github.com/leobritob/express-graphql#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.14.9",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "apollo-server": "^3.1.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "knex": "^0.95.9",
+    "mysql": "^2.18.1",
+    "uuid": "^8.3.2"
+  }
+}
