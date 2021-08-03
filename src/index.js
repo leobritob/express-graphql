@@ -26,7 +26,7 @@ const resolvers = {
     getUserByName: (_, { first_name }) => userService.findByFirstName(first_name),
   },
   Mutation: {
-    createUser: (_, args) => userService.save(args),
+    createUser: (_, args) => userService.insert(args),
   },
 }
 

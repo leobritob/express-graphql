@@ -16,7 +16,7 @@ class UserRepository {
     return result[0]
   }
 
-  async save(user) {
+  async insert(user) {
     const data = { ...user, id: uuid() }
     await this.db('users').insert(data)
 

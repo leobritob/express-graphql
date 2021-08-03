@@ -17,8 +17,8 @@ class UserService {
     return await this.repository.find({ first_name })
   }
 
-  async save(user) {
-    return await this.repository.save(user)
+  async insert(user) {
+    return await this.repository.insert(user)
   }
 }
 
