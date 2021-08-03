@@ -20,6 +20,16 @@ class UserService {
   async insert(user) {
     return await this.repository.insert(user)
   }
+
+  async update(id, user) {
+    await this.repository.update(id, user)
+    return true
+  }
+
+  async delete(id) {
+    await this.repository.delete(id)
+    return true
+  }
 }
 
 const userService = new UserService()

@@ -16,6 +16,8 @@ const typeDefs = gql`
 
   type Mutation {
     createUser(first_name: String!, last_name: String!): User
+    updateUserById(id: ID!, first_name: String!, last_name: String!): Boolean
+    deleteUserByid(id: ID!): Boolean
   }
 `
 
@@ -27,6 +29,8 @@ const resolvers = {
   },
   Mutation: {
     createUser: (_, args) => userService.insert(args),
+    updateUserById: (_, { id, ...user }) => userService.update(id, user),
+    deleteUserByid: (_, { id }) => userService.delete(id),
   },
 }
 
