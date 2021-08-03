@@ -24,5 +24,5 @@ docker exec -it graphql_app_nodejs bash
 ```bash
 npx knex migration:latest
 ```
-5. Congrats!
+5. Congrats! Your app will be running on http://localhost:4000 🚀
 
