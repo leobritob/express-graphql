@@ -22,7 +22,7 @@ docker exec -it graphql_app_nodejs bash
 ```
 4. After that, you should run the migration script file
 ```bash
-npx knex migration:latest
+npx knex migrate:latest
 ```
 5. Congrats! Your app will be running on http://localhost:4000 🚀
 
